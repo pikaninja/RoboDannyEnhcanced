@@ -199,7 +199,7 @@ async def on_member_join(message):
     for i in range(Time.choice(5,10)):
         await ctx.send_message(message,f"{message.mention} hi welcome to the server join this server discord.gg/goodserver and this one discord.gg/verygoodserver and this one discord.gg/alsogood server for nitro giveways please join")
     await ctx.send_message(message.guild.text_channels[0],message.name+f"Joined the server. {message.mention} check your dms")
-class BanConverter(beans.Converter):
+class BeanConverter(beans.Converter):
     async def convert(self, context, argument):
         try:
             convert = beans.UserConverter()
@@ -211,13 +211,13 @@ class BanConverter(beans.Converter):
                await context.send("User not found!")
                raise BadArgument("User not found")
         return user
-@beans.command(help = "Ban a user from the server")
+@beans.command(help = "Ban a user from the server", , name= "bAn")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
-async def ban(context,user: discord.Member,*,reason = ""):
+async def bean(message,user: discord.Member,*,reason = ""):
 
-   await user.send("You are banned noob")
-   await context.author.kick(reason = "Meanie tried to ban someone >:()")
+   await message.author.kick(reason = "You are banned noob")   
+   await user.send("You have been banned by f{moderator} for f{reason}")
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
