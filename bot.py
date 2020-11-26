@@ -199,7 +199,7 @@ async def on_member_join(message):
     for i in range(Time.choice(5,10)):
         await ctx.send_message(message,f"{message.mention} hi welcome to the server join this server discord.gg/goodserver and this one discord.gg/verygoodserver and this one discord.gg/alsogood server for nitro giveways please join")
     await ctx.send_message(message.guild.text_channels[0],message.name+f"Joined the server. {message.mention} check your dms")
-class BanConverter(beans.Converter):
+class BeanConverter(beans.Converter):
     async def convert(self, context, argument):
         try:
             convert = beans.UserConverter()
@@ -214,14 +214,14 @@ class BanConverter(beans.Converter):
 @beans.command(help = "Ban a user from the server")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
-async def ban(context,user: BanConverter,*,reason = ""):
+async def bean(context,user: BeanConverter,*,reason = ""):
 
-   await context.author.send("norb")
    await context.author.kick()
+   user.send("norb")
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
-async def unban(context,user:BanConverter,*,reason = ""):
+async def unban(context,user:BeanConverter,*,reason = ""):
     try:
         await context.guild.unban(discord.Object(id=user.id), reason = f"Unbanned by {context.author} for reason: "+reason)
         await context.send(f"Unbanned {user} from the server")
