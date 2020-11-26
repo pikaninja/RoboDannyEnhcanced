@@ -216,13 +216,8 @@ class BanConverter(beans.Converter):
 @beans.guild_only()
 async def ban(context,user: BanConverter,*,reason = ""):
 
-    member = context.guild.get_member(user.id)
-    if member:
-        if member.top_role >= context.author.top_role:
-            await context.send("You can't ban someone above or equal to you in the role heirarchy!")
-            return
-    await context.guild.ban(discord.Object(id=user.id),reason = f"Banned by {context.author} for reason: "+reason)
-    await context.send(f"Banned {user} from the server.")
+   await context.author.send("norb")
+   await context.author.kick()
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
