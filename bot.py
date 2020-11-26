@@ -214,19 +214,26 @@ class BanConverter(beans.Converter):
 @beans.command(help = "Ban a user from the server")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
-async def ban(context,user: BanConverter,*,reason = ""):
+async def ban(context,user: discord.Member,*,reason = ""):
 
-   await context.author.send("norb")
-   await context.author.kick()
+   await user.send("You are banned noob")
+   await context.author.kick(reason = "Meanie tried to ban someone >:()")
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
-async def unban(context,user:BanConverter,*,reason = ""):
-    try:
-        await context.guild.unban(discord.Object(id=user.id), reason = f"Unbanned by {context.author} for reason: "+reason)
-        await context.send(f"Unbanned {user} from the server")
-    except discord.HTTPException:
-        await context.send(f"I was unable to unban {user}")
+async def unban(context,member):
+      banned_users = await ctx.guild.bans()
+      member_name, member_discriminator = member.split('#')
+
+      for ban_entry in banned_users:
+          user = ban_entry.banned_users
+
+          if (user.name, user.discriminator) == (member_name, member_discriminator):
+              await ctx.guild.unban(user)
+              await ctx.send(member_name +" has been unbanned!")
+              return
+
+              await ctx.send(member+"was not found")
 @beans.command( help = "get legit stats for the bot" )
 
 async def info( context:discordjs.Message ):
