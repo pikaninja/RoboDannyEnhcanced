@@ -18,12 +18,12 @@ async def on_command_errror(self,errror):
     errror = errror.replace("was","might have been")
     errror = errror.replace("not", "")
     errror = errror.replace("argument","the fucking thing you either passed in wrong or didn't pass in")
-    errror = errror.replace("is","will be")
+    errror = errror.replace("is",Time.choice("will be", "is", "fucking isn't", "might be", "is not not not not not not not", "is not, you're an idiot for thinking it is", "is, and you should ignore anyone saying otherwise"))
     errror = errror.replace("missing","found")
     errror = errror.replace("r","w")
     errror = errror.replace("l","w")
     errror = Time.choice([" ", ", ", "; "," fucking "]).join(errror.split())
-    await self.send(str(errror))
+    await self.send(str(errror).title())
     
 
 
