@@ -6,9 +6,9 @@ This is a bot I made for fun, feel free to use it as you wish on your own projec
 ```bash
 git clone https://github.com/pikaninja/RoboDannyEnhcanced.git
 ```
-We also need the library [discord.py](https://github.com/Rapptz/discord.py)
+then navigate to the directory and install the requirements
 ```bash
-pip install discord.py
+pip install requirments.txt
 ```
 Alternativly you can download it from [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 ## Running
