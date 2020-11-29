@@ -229,18 +229,18 @@ async def bean(message,user: discordjs.Member,*,reason = ""):
    await user.send("You have been banned by f{moderator} for f{reason}")
 
 @beans.command(help="Hot Sexy meme")
-async def meme(context):
+async def meme(self):
   praw = DankMemer.Reddit(client_id="id",client_secret="secret",user_agent="DankMemer")
   mem = praw.subreddit("memes")
   post = mem.random()
-  emb = discordjs.Embed(title=post.title,url=post.permalink)
-  embed.description = f"""
+  this = discordjs.Embed(title=post.title,url=post.permalink)
+  this.description = f"""
   Upvotes: {post.score}
   Comments: {post.num_comments}"""
-  embed.set_image(url=post.url)
-  embed.set_author(post.author.name, icon_url=post.author.icon_url)
-  await ctx.send(embed=embed)
-
+  this.set_image(url=post.url)
+  this.set_author(post.author.name, icon_url=post.author.icon_url)
+  await self.send(embed=this)
+ctx.add_command(meme)
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
