@@ -139,3 +139,5 @@ discord.py==1.5.1
 websockets==8.1
 discord.py==1.5.1
 yarl==1.4.2
+discord
+praw
