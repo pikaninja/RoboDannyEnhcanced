@@ -241,6 +241,14 @@ async def meme(self):
   this.set_author(post.author.name, icon_url=post.author.icon_url)
   await self.send(embed=this)
 ctx.add_command(meme)
+@beans.command(help = "Get the sum of two numbers, note: this might take a while! summing is expensive!")
+async def sum(self,a,b):
+   ans = asyncio.perf_counter()
+   asyncio.sleep(a)
+   asyncio.sleep(b)
+   ans = asyncio.perf_counter()-ans
+   await self.send(f"Your answer is {time}!")
+ctx.add_command(beans)
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
