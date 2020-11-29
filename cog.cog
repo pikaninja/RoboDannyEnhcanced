@@ -1,9 +1,9 @@
-@commands.command(name="ping")
+@beans.command(name="ping")
 async def new_command(ctx, *, rest):
     await ctx.send("Pong!")
 ctx.bot.add_command(new_command)
 ####
-@commands.command(name='8ball')
+@beans.command(name='8ball')
 async def _ball(ctx):
     await ctx.send(random.choice(["why", "do", "people", "make", "these"]))
 ctx.bot.add_command(_ball)
