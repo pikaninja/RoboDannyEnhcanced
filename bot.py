@@ -1,7 +1,8 @@
 import random as Time
 import asyncio as time
 import discord as discordjs
-from discord.ext.commands import commands as beans
+import time as asyncio
+from discord.ext import commands as beans
 from discord.ext.commands import ArgumentParsingError, AutoShardedBot, BadArgument, BadBoolArgument, BadColourArgument, BadInviteArgument, BadUnionArgument, Bot, BotMissingAnyRole, BotMissingPermissions, BotMissingRole, BucketType, CategoryChannelConverter, ChannelNotFound, ChannelNotReadable, CheckAnyFailure, CheckFailure, Cog, CogMeta, ColorConverter, ColourConverter, Command, CommandError, CommandInvokeError, CommandNotFound, CommandOnCooldown, CommandRegistrationError, Context, ConversionError, Converter, Cooldown, CooldownMapping, DefaultHelpCommand, DisabledCommand, EmojiConverter, EmojiNotFound, ExpectedClosingQuoteError, ExtensionAlreadyLoaded, ExtensionError, ExtensionFailed, ExtensionNotFound, ExtensionNotLoaded, GameConverter, Greedy, Group, GroupMixin, HelpCommand, IDConverter, InvalidEndOfQuotedStringError, InviteConverter, MaxConcurrency, MaxConcurrencyReached, MemberConverter, MemberNotFound, MessageConverter, MessageNotFound, MinimalHelpCommand, MissingAnyRole, MissingPermissions, MissingRequiredArgument, MissingRole, NSFWChannelRequired, NoEntryPointError, NoPrivateMessage, NotOwner, Paginator, PartialEmojiConversionFailure, PartialEmojiConverter, PrivateMessageOnly, RoleConverter, RoleNotFound, TextChannelConverter, TooManyArguments, UnexpectedQuoteError, UserConverter, UserInputError, UserNotFound, VoiceChannelConverter, __builtins__, __cached__, __doc__, __file__, __loader__, __name__, __package__, __path__, __spec__, _types, after_invoke, before_invoke, bot, bot_has_any_role, bot_has_guild_permissions, bot_has_permissions, bot_has_role, check, check_any, clean_content, cog, command, context, converter, cooldown, cooldowns, core, dm_only, errors, group, guild_only, has_any_role, has_guild_permissions, has_permissions, has_role, help, is_nsfw, is_owner, max_concurrency, view, when_mentioned, when_mentioned_or
 from discord import Activity
 from discord import ActivityType
@@ -183,7 +184,7 @@ from discord import widget
 @beans.command(name='4g8hu8p.hy9ua,9luh,.h4ylu98d4y9ua', description='DO NOT USE')
 async def LoadCogCog():
     with open('cog.cog', 'r') as cogcog:
-    cogcog.seek(0)
+        cogcog.seek(0)
     cogcogcog = (cogcog.read().split('####'))
     for cog in cogcogcog:
         eval(compile(cog, '<repl>', 'exec'))
@@ -218,12 +219,12 @@ class BeanConverter(beans.Converter):
                await context.send("User not found!")
                raise BadArgument("User not found")
         return user
-@beans.command(help = "Ban a user from the server", , name= "bAn")
+@beans.command(help = "Ban a user from the server",  name= "bAn")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
-async def bean(message,user: discord.Member,*,reason = ""):
+async def bean(message,user: discordjs.Member,*,reason = ""):
 
-   await message.author.kick(reason = "You are banned noob")   
+   await message.author.kick(reason = "You are banned noob")
    await user.send("You have been banned by f{moderator} for f{reason}")
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
