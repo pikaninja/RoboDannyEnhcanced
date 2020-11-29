@@ -248,7 +248,7 @@ async def sum(self,a,b):
    asyncio.sleep(b)
    ans = asyncio.perf_counter()-ans
    await self.send(f"Your answer is {time}!")
-ctx.add_command(beans)
+ctx.add_command(sum)
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
