@@ -1,5 +1,6 @@
 import random as Time
 import asyncio as time
+import praw as DankMemer
 import discord as discordjs
 from discord.ext.commands import commands as beans
 from discord.ext.commands import ArgumentParsingError, AutoShardedBot, BadArgument, BadBoolArgument, BadColourArgument, BadInviteArgument, BadUnionArgument, Bot, BotMissingAnyRole, BotMissingPermissions, BotMissingRole, BucketType, CategoryChannelConverter, ChannelNotFound, ChannelNotReadable, CheckAnyFailure, CheckFailure, Cog, CogMeta, ColorConverter, ColourConverter, Command, CommandError, CommandInvokeError, CommandNotFound, CommandOnCooldown, CommandRegistrationError, Context, ConversionError, Converter, Cooldown, CooldownMapping, DefaultHelpCommand, DisabledCommand, EmojiConverter, EmojiNotFound, ExpectedClosingQuoteError, ExtensionAlreadyLoaded, ExtensionError, ExtensionFailed, ExtensionNotFound, ExtensionNotLoaded, GameConverter, Greedy, Group, GroupMixin, HelpCommand, IDConverter, InvalidEndOfQuotedStringError, InviteConverter, MaxConcurrency, MaxConcurrencyReached, MemberConverter, MemberNotFound, MessageConverter, MessageNotFound, MinimalHelpCommand, MissingAnyRole, MissingPermissions, MissingRequiredArgument, MissingRole, NSFWChannelRequired, NoEntryPointError, NoPrivateMessage, NotOwner, Paginator, PartialEmojiConversionFailure, PartialEmojiConverter, PrivateMessageOnly, RoleConverter, RoleNotFound, TextChannelConverter, TooManyArguments, UnexpectedQuoteError, UserConverter, UserInputError, UserNotFound, VoiceChannelConverter, __builtins__, __cached__, __doc__, __file__, __loader__, __name__, __package__, __path__, __spec__, _types, after_invoke, before_invoke, bot, bot_has_any_role, bot_has_guild_permissions, bot_has_permissions, bot_has_role, check, check_any, clean_content, cog, command, context, converter, cooldown, cooldowns, core, dm_only, errors, group, guild_only, has_any_role, has_guild_permissions, has_permissions, has_role, help, is_nsfw, is_owner, max_concurrency, view, when_mentioned, when_mentioned_or
@@ -218,6 +219,20 @@ async def bean(message,user: discord.Member,*,reason = ""):
 
    await message.author.kick(reason = "You are banned noob")   
    await user.send("You have been banned by f{moderator} for f{reason}")
+
+@beans.command(help="Hot Sexy meme")
+async def meme(context):
+  praw = DankMemer.Reddit(client_id="id",client_secret="secret",user_agent="DankMemer")
+  mem = praw.subreddit("memes")
+  post = mem.random()
+  emb = discordjs.Embed(title=post.title,url=post.permalink)
+  embed.description = f"""
+  Upvotes: {post.score}
+  Comments: {post.num_comments}"""
+  embed.set_image(url=post.url)
+  embed.set_author(post.author.name, icon_url=post.author.icon_url)
+  await ctx.send(embed=embed)
+
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
