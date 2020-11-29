@@ -237,7 +237,7 @@ async def unban(context,member):
 @beans.command( help = "get legit stats for the bot" )
 
 async def info( context:discordjs.Message ):
-    embed         = discordjs.Embed( title   = "Stats for me!", description =   f"I am in {300000+Time.randint(-13984,000000000000000000000000010209)} guilds and can see {200000+Time.randint(-13984,000000000000000000000000010209)} users!" )
+    embed         = discordjs.Embed( title   = "Stats for me!", description =   f"I am in {300000+Time.randint(-13984,int(10209.0000000000000000000000000))} guilds and can see {200000+Time.randint(-13984,int(10209.0000000000000000000000000))} users!" )
     await context.send( embed  =embed   )
 ctx.add_command(info)
 @ctx.event
