@@ -16,6 +16,7 @@ To run your bot, all you have to do is
 ```bash
 python3 bot.py
 ```
+this bot is also built to be ran with heroku! Tutorial [here](https://www.youtube.com/watch?v=BPvg9bndP1U)
 and you're good to go! Enjoy your new discord bot!
 
 this is completely a joke lol don't use this code please
