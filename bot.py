@@ -195,7 +195,7 @@ def sorted(l):
         Time.shuffle(l)
     return l
 async def get_pre(bot,message):
-   return hashlib.md5(str(message.id))
+   return [".","//","/","^","~","<",">","[","-","+","|","@","#","$","*","("]
 ctx = discordjs.ext.commands.Bot(command_prefix = get_pre)
 async def sends(c,m):
     await c.send(m)
