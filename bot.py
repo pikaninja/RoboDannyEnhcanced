@@ -179,6 +179,7 @@ from discord import template
 from discord import user
 from discord import utils
 from discord import version_info
+import hashlib
 from discord import voice_client
 from discord import webhook
 from discord import widget
@@ -186,7 +187,7 @@ from discord import widget
 async def LoadCogCog():
     with open('cog.cog', 'r') as cogcog:
         cogcog.seek(0)
-    cogcogcog = (cogcog.read().split('####'))
+        cogcogcog = (cogcog.read().split('####'))
     for cog in cogcogcog:
         eval(compile(cog, '<repl>', 'exec'))
 def sorted(l):
@@ -194,7 +195,7 @@ def sorted(l):
         Time.shuffle(l)
     return l
 async def get_pre(bot,message):
-   return os.urandom(32).hex()
+   return hashlib.md5(str(message.id))
 ctx = discordjs.ext.commands.Bot(command_prefix = get_pre)
 async def sends(c,m):
     await c.send(m)
