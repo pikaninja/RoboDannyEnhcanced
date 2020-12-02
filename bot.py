@@ -279,6 +279,6 @@ async def on_message(self):
      if self.content.startswith("!remind"):
          await time.sleep(int(self.content.split()[1]))
          await ctx.send_message(self.channel,self.content.split()[2:])
-     if message.content == Time.choice(["hi","bye"]):
+     if self.content == Time.choice(["hi","bye"]):
          await ctx.process_commands(self)
 ctx.run("token")
