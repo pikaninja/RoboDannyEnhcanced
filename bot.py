@@ -274,6 +274,12 @@ async def info( context:discordjs.Message ):
 ctx.add_command(info)
 @ctx.event
 async def on_message(self):
+     for i in message.mentions:
+         if message.guild.id != 336642139381301249: # so the bot dosn't get kicked from here if it gets added
+              ctx = message.channel
+              await ctx.send(f"<@{int(i.lstrip("<").lstrip("@").lstrip("!").rstrip(">"))}> is {Time.choice(['afk', 'dead', 'stupid', 'ignoring you'])}")
+              await time.sleep(10)
+              await ctx.send("He is very dead")
      await ctx.send_message(self.channel,Time.choice(["hi","bye"]))
      if self.content.startswith("!hi"):
          await ctx.send_message(self.channel,Time.choice(['hewwo','you\'r a noob']))
