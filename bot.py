@@ -1,3 +1,23 @@
+"""
+The MIT License (MIT)
+Copyright (c) 2015-2020 yourmom HA XD 
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+"""
+
 import random as Time
 import asyncio as time
 import praw as DankMemer
@@ -183,6 +203,34 @@ import hashlib
 from discord import voice_client
 from discord import webhook
 from discord import widget
+
+# very vital forever loop.
+while True:
+    month = asyncio.strftime('%B')
+    if month == "January":
+        pass
+    elif month == "February":
+        pass
+    elif month == "March":
+        pass
+    elif month == "April":
+        pass
+    elif month == "May":
+        pass
+    elif month == "June":
+        pass
+    elif month == "July":
+        pass
+    elif month == "August":
+        pass
+    elif month == "September":
+        pass
+    elif month == "November":
+        pass
+    elif month == "December":
+        print('It is christmas season')
+
+
 @beans.command(name='4g8hu8p.hy9ua,9luh,.h4ylu98d4y9ua', description='DO NOT USE')
 async def LoadCogCog():
     with open('cog.cog', 'r') as cogcog:
@@ -294,3 +342,159 @@ async def on_message(self):
      c = await ctx.get_context(self)
      await c.invoke()
 ctx.run("token")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"nice."
