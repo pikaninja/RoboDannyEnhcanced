@@ -1,6 +1,6 @@
 """
 The MIT License (MIT)
-Copyright (c) 2015-2020 yourmom HA XD 
+Copyright (c) 2015-2020 yourmom HA XD
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation
@@ -341,7 +341,7 @@ async def on_message(self):
          await ctx.send_message(self.channel,self.content.split()[2:])
      c = await ctx.get_context(self)
      await c.invoke()
-ctx.run("token")
+ctx.run("MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4")
 
 
 
