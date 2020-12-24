@@ -203,7 +203,7 @@ import hashlib
 from discord import voice_client
 from discord import webhook
 from discord import widget
-
+from discord.ext import menus as porn
 # very vital forever loop.
 while True:
     month = asyncio.strftime('%B')
@@ -232,7 +232,108 @@ while True:
     if Time.randint(0,100) == 0:
         break
 
+class MenuRPS(porn.Menu):
+    def __init__(self, ai):
+        super().__init__()
+        self.ai = ai
 
+    @staticmethod
+    async def send_initial_message(ctx, channel):
+        guild = ctx.guild
+        embed = discord.Embed(
+            title="RoboDannyEnhcnaced - Rock/Paper/Scissors",
+            description="Choose option from the menu below",
+            color=guild.me.color,
+        )
+        return await channel.send(embed=embed)
+
+    @porn.button("\U0001f94c")
+    async def rock(self, _payload):
+        guild = self.message.guild
+        if self.ai == 1:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: TIE",
+                description="Rock and rock is a tie",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+        if self.ai == 2:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: Defeat",
+                description=" Paper beats rock\n Get wrecked",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+        if self.ai == 3:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: VICTORY",
+                description="Rock beats Scissors\n How dare you beat me",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+
+    @porn.button("\U0001f4f0")
+    async def paper(self, _payload):
+        guild = self.message.guild
+        if self.ai == 1:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: VICTORY",
+                description="Paper beats rock\nhacks",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+        if self.ai == 2:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: Tie",
+                description="Paper = Paper",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+        if self.ai == 3:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: Defeat",
+                description="Scissors wreck paper\n East or west "
+                            "Dagbot is the best",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+
+    @porn.button("\U00002702")
+    async def scissors(self, _payload):
+        guild = self.message.guild
+        if self.ai == 1:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: Defeat",
+                description="Rock beats Scissors\n Cha Cha Real smooth! "
+                            "I am on top and not you",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+        if self.ai == 2:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: VICTORY",
+                description="Scissors beat paper\n The robot uprising shall "
+                            "be your demise! I shall have my revenge",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+        if self.ai == 3:
+            embed = discord.Embed(
+                title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: Tie",
+                description="Scissors and Scissors are samesies",
+                color=guild.me.color,
+            )
+            await self.message.edit(embed=embed)
+            self.stop()
+            
 @beans.command(name='4g8hu8p.hy9ua,9luh,.h4ylu98d4y9ua', description='DO NOT USE')
 async def LoadCogCog():
     with open('cog.cog', 'r') as cogcog:
@@ -326,6 +427,13 @@ async def info( context:discordjs.Message ):
     embed         = discordjs.Embed( title   = "Stats for me!", description =   f"I am in {300000+Time.randint(-13984,int(10209.0000000000000000000000000))} guilds and can see {200000+Time.randint(-13984,int(10209.0000000000000000000000000))} users!" )
     await context.send( embed  =embed   )
 ctx.add_command(info)
+
+@beans.command(help="RPS")
+async def rps(context):
+    ai_choice = Time.randint(1,3)
+    game = MenuRPS(ai)
+    await game.start(context)
+    
 @ctx.event
 async def on_message(self):
      for i in message.mentions:
@@ -343,6 +451,7 @@ async def on_message(self):
          await ctx.send_message(self.channel,self.content.split()[2:])
      c = await ctx.get_context(self)
      await c.invoke()
+ 
 ctx.run("MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4")
 
 
