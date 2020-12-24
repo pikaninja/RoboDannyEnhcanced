@@ -283,3 +283,4 @@ discord.py==1.5.1
 yarl==1.4.2
 discord
 praw
+git+https://github.com/rapptz/discord-ext-menus
