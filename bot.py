@@ -298,7 +298,7 @@ class MenuRPS(porn.Menu):
             embed = discord.Embed(
                 title="RoboDannyEnhcnaced  - Rock/Paper/Scissors Result: Defeat",
                 description="Scissors wreck paper\n East or west "
-                            "Dagbot is the best",
+                            "RoboDannyEnhcnaced is the best",
                 color=guild.me.color,
             )
             await self.message.edit(embed=embed)
