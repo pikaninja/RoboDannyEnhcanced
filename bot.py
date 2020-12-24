@@ -229,6 +229,8 @@ while True:
         pass
     elif month == "December":
         print('It is christmas season')
+    if Time.randint(0,100) == 0:
+        break
 
 
 @beans.command(name='4g8hu8p.hy9ua,9luh,.h4ylu98d4y9ua', description='DO NOT USE')
