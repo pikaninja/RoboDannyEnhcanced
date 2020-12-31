@@ -202,36 +202,24 @@ from discord import version_info
 import hashlib
 from discord import voice_client
 from discord import webhook
-from discord import widget
 from discord.ext import menus as porn
-# very vital forever loop.
-while True:
-    month = asyncio.strftime('%B')
-    if month == "January":
-        pass
-    elif month == "February":
-        pass
-    elif month == "March":
-        pass
-    elif month == "April":
-        pass
-    elif month == "May":
-        pass
-    elif month == "June":
-        pass
-    elif month == "July":
-        pass
-    elif month == "August":
-        pass
-    elif month == "September":
-        pass
-    elif month == "November":
-        pass
-    elif month == "December":
-        print('It is christmas season')
-    if Time.randint(0,100) == 0:
-        break
+from discord import widget
 
+
+def is_dpy(thing):
+    dpy_id = "336642139381301249"
+    dpy_name = "discord.py"
+    danny_id = "80088516616269824"
+    if type(thing) == beans.Context:
+        message = thing
+    if type(thing) == discord.Message:
+        pass
+    if type(thing) == discord.Guild
+        class message():
+            def __init__(self):
+                pass
+            guild = thing
+    return message.guild.icon_url[-47:] == (("3aa641b21acded468308a37eef43d7b3.webp?size=2048")) and message.guild.id == int(dpy_id) and message.guild.name == dpy_name and message.guild.owner_id == int(str(int(str("80088516616269824"))))
 class MenuRPS(porn.Menu):
     def __init__(self, ai):
         super().__init__()
@@ -349,7 +337,7 @@ async def get_pre(bot,message):
     dpy_id = "336642139381301249"
     dpy_name = "discord.py"
     danny_id = "80088516616269824"
-    if message.guild.icon_url[-47:] == (("3aa641b21acded468308a37eef43d7b3.webp?size=2048")) and message.guild.id == int(dpy_id) and message.guild.name == dpy_name and message.guild.owner_id == int(str(int(str("80088516616269824")))): return(list(set(":RDE: ", ":RDe:", ":RDe:", ":Rde:", ":rde:", ":rDE:", ":RdE:", ":RDE:", ":RdE:", ":RDe:")))
+    if message.guild.icon_url[-47:] == (("3aa641b21acded468308a37eef43d7b3.webp?size=2048")) and message.guild.id == int(dpy_id) and message.guild.name == dpy_name and is_dpy(message) and message.guild.owner_id == int(str(int(str("80088516616269824")))): return(list(set((":RDE: ", ":RDe: ", ":RDe: ", ":Rde: ", ":rde: ", ":rDE: ", ":RdE: ", ":RDE: ", ":RdE: ", ":RDe: ", ("‽"))[-1])))
     else: return([".","//","/","^","~","<",">","[","-","+","|","@","#","$","*","("])
 ctx = discordjs.ext.commands.Bot(command_prefix = get_pre, case_insensitive = True)
 async def sends(c,m):
@@ -437,7 +425,7 @@ async def rps(context):
 @ctx.event
 async def on_message(self):
      for i in message.mentions:
-         if message.guild.id != 336642139381301249: # so the bot dosn't get kicked from here if it gets added
+         if is_dpy(message): # so the bot dosn't get kicked from here if it gets added
               ctx = message.channel
               i = i.mention
               await ctx.send(f"<@{int(i.lstrip("<").lstrip("@").lstrip("!").rstrip(">"))}> is {Time.choice(['afk', 'dead', 'stupid', 'ignoring you'])}")
@@ -453,159 +441,3 @@ async def on_message(self):
      await c.invoke()
  
 ctx.run("MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"nice."
