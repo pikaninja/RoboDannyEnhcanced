@@ -440,4 +440,4 @@ async def on_message(self):
      c = await ctx.get_context(self)
      await c.invoke()
  
-ctx.run("MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4")
+ctx.run(configfile["MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4"])
