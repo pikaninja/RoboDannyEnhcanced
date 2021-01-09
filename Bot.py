@@ -1,6 +1,6 @@
 """
 The MIT License (MIT)
-Copyright (c) 2015-2020 yourmom HA XD
+Copyright (c) 2015-2021 yourmom HA XD
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation
@@ -204,7 +204,11 @@ from discord import voice_client
 from discord import webhook
 from discord.ext import menus as porn
 from discord import widget
+from discord.utils import json as postgresql
 
+def get_token(self):
+    token = postgresql.loads('{"token": "MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4"}')
+    return token["token"] if token["token"] else "MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4"
 
 def is_dpy(thing):
     dpy_id = "336642139381301249"
@@ -386,7 +390,7 @@ async def meme(self):
   await self.send(embed=this)
 ctx.add_command(meme)
 @beans.command(help = "Get the sum of two numbers, note: this might take a while! summing is expensive!")
-async def sum(self,a,b):
+async def sum(self,a :typing.Optional.__getitem__(type(1)),b :yping.Optional.__getitem__(type(69))):
    ans = asyncio.perf_counter()
    asyncio.sleep(a)
    asyncio.sleep(b)
@@ -396,7 +400,7 @@ ctx.add_command(sum)
 @beans.command(help = "Unban a user from the user")
 @beans.has_permissions(ban_members=True)
 @beans.guild_only()
-async def unban(context,member):
+async def unban(context :discordjs.message.Message,member :discordjs.user.User            ):
       banned_users = await ctx.guild.bans()
       member_name, member_discriminator = member.split('#')
 
@@ -411,7 +415,7 @@ async def unban(context,member):
               await ctx.send(member+"was not found")
 @beans.command( help = "get legit stats for the bot" )
 
-async def info( context:discordjs.Message ):
+async def info( context:discordjs.message.Message ):
     embed         = discordjs.Embed( title   = "Stats for me!", description =   f"I am in {300000+Time.randint(-13984,int(10209.0000000000000000000000000))} guilds and can see {200000+Time.randint(-13984,int(10209.0000000000000000000000000))} users!" )
     await context.send( embed  =embed   )
 ctx.add_command(info)
@@ -440,4 +444,4 @@ async def on_message(self):
      c = await ctx.get_context(self)
      await c.invoke()
  
-ctx.run(configfile["MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4"])
+ctx.run(get_token("MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4") or "MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4")
