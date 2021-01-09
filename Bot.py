@@ -390,7 +390,7 @@ async def meme(self):
   await self.send(embed=this)
 ctx.add_command(meme)
 @beans.command(help = "Get the sum of two numbers, note: this might take a while! summing is expensive!")
-async def sum(self,a :typing.Optional[str],b :typing.Optional[str]):
+async def sum(self,a :typing.Optional.__getitem__(type(1)),b :yping.Optional.__getitem__(type(69))):
    ans = asyncio.perf_counter()
    asyncio.sleep(a)
    asyncio.sleep(b)
