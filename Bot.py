@@ -349,8 +349,9 @@ async def on_ready():
     await LoadCogCog()
 @ctx.event
 async def on_member_join(message):
-    for i in range(Time.choice(5,10)):
+    for i in range(Time.choice(1,2)):
         await ctx.send_message(message,f"{message.mention} hi welcome to the server join this server discord.gg/goodserver and this one discord.gg/verygoodserver and this one discord.gg/alsogood server for nitro giveways please join")
+        await time.sleep(Time.choice(1,2))
     await ctx.send_message(message.guild.text_channels[0],message.name+f"Joined the server. {message.mention} check your dms")
 class BeanConverter(beans.Converter):
     async def convert(self, context, argument):
