@@ -333,10 +333,6 @@ async def LoadCogCog():
         cogcogcog = (cogcog.read().split('####'))
     for cog in cogcogcog:
         eval(compile(cog, '<repl>', 'exec'))
-def sorted(l):
-    while any(x > y for x, y in zip(l, l[1:])):
-        Time.shuffle(l)
-    return l
 async def get_pre(bot,message):
     dpy_id = "336642139381301249"
     dpy_name = "discord.py"
