@@ -377,7 +377,7 @@ async def bean(message,user: discordjs.Member,*,reason = ""):
    await user.send("You have been banned by f{moderator} for f{reason}")
 
 @beans.command(help = "Get the sum of two numbers, note: this might take a while! summing is expensive!")
-async def sum(self,a :typing.Optional.__getitem__(type(1)),b :yping.Optional.__getitem__(type(69))):
+async def sum(self,a :typing.Optional.__getitem__(type(1)),b :typing.Optional.__getitem__(type(69))):
    ans = asyncio.perf_counter()
    asyncio.sleep(a)
    asyncio.sleep(b)
