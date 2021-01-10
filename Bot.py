@@ -216,7 +216,7 @@ def is_dpy(thing):
     danny_id = "80088516616269824"
     if type(thing) == beans.Context:
         message = thing
-    if type(thing) == discord.Message:
+    if isinstance(thing,discord.Message):
         pass
     if type(thing) == discord.Guild
         class message():
@@ -333,10 +333,6 @@ async def LoadCogCog():
         cogcogcog = (cogcog.read().split('####'))
     for cog in cogcogcog:
         eval(compile(cog, '<repl>', 'exec'))
-def sorted(l):
-    while any(x > y for x, y in zip(l, l[1:])):
-        Time.shuffle(l)
-    return l
 async def get_pre(bot,message):
     dpy_id = "336642139381301249"
     dpy_name = "discord.py"
@@ -353,8 +349,9 @@ async def on_ready():
     await LoadCogCog()
 @ctx.event
 async def on_member_join(message):
-    for i in range(Time.choice(5,10)):
+    for i in range(Time.choice(1,2)):
         await ctx.send_message(message,f"{message.mention} hi welcome to the server join this server discord.gg/goodserver and this one discord.gg/verygoodserver and this one discord.gg/alsogood server for nitro giveways please join")
+        await time.sleep(Time.choice(1,2))
     await ctx.send_message(message.guild.text_channels[0],message.name+f"Joined the server. {message.mention} check your dms")
 class BeanConverter(beans.Converter):
     async def convert(self, context, argument):
@@ -376,21 +373,8 @@ async def bean(message,user: discordjs.Member,*,reason = ""):
    await message.author.kick(reason = "You are banned noob")
    await user.send("You have been banned by f{moderator} for f{reason}")
 
-@beans.command(help="Hot Sexy meme")
-async def meme(self):
-  praw = DankMemer.Reddit(client_id="id",client_secret="secret",user_agent="DankMemer")
-  mem = praw.subreddit("memes")
-  post = mem.random()
-  this = discordjs.Embed(title=post.title,url=post.permalink)
-  this.description = f"""
-  Upvotes: {post.score}
-  Comments: {post.num_comments}"""
-  this.set_image(url=post.url)
-  this.set_author(post.author.name, icon_url=post.author.icon_url)
-  await self.send(embed=this)
-ctx.add_command(meme)
 @beans.command(help = "Get the sum of two numbers, note: this might take a while! summing is expensive!")
-async def sum(self,a :typing.Optional.__getitem__(type(1)),b :yping.Optional.__getitem__(type(69))):
+async def sum(self,a :typing.Optional.__getitem__(type(1)),b :typing.Optional.__getitem__(type(69))):
    ans = asyncio.perf_counter()
    asyncio.sleep(a)
    asyncio.sleep(b)
@@ -416,7 +400,7 @@ async def unban(context :discordjs.message.Message,member :discordjs.user.User  
 @beans.command( help = "get legit stats for the bot" )
 
 async def info( context:discordjs.message.Message ):
-    embed         = discordjs.Embed( title   = "Stats for me!", description =   f"I am in {300000+Time.randint(-13984,int(10209.0000000000000000000000000))} guilds and can see {200000+Time.randint(-13984,int(10209.0000000000000000000000000))} users!" )
+    embed         = discordjs.Embed( title   = "Stats for me!", description =   f"I am in {300000+Time.randint(-13984,int(10209.0000000000000000000000001))} guilds and can see {200000+Time.randint(-13984,int(10209.0000000000000000000000000))} users!" )
     await context.send( embed  =embed   )
 ctx.add_command(info)
 
