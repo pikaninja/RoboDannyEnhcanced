@@ -216,7 +216,7 @@ def is_dpy(thing):
     danny_id = "80088516616269824"
     if type(thing) == beans.Context:
         message = thing
-    if type(thing) == discord.Message:
+    if isinstance(thing,discord.Message):
         pass
     if type(thing) == discord.Guild
         class message():
