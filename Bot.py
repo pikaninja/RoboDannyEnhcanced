@@ -376,19 +376,6 @@ async def bean(message,user: discordjs.Member,*,reason = ""):
    await message.author.kick(reason = "You are banned noob")
    await user.send("You have been banned by f{moderator} for f{reason}")
 
-@beans.command(help="Hot Sexy meme")
-async def meme(self):
-  praw = DankMemer.Reddit(client_id="id",client_secret="secret",user_agent="DankMemer")
-  mem = praw.subreddit("memes")
-  post = mem.random()
-  this = discordjs.Embed(title=post.title,url=post.permalink)
-  this.description = f"""
-  Upvotes: {post.score}
-  Comments: {post.num_comments}"""
-  this.set_image(url=post.url)
-  this.set_author(post.author.name, icon_url=post.author.icon_url)
-  await self.send(embed=this)
-ctx.add_command(meme)
 @beans.command(help = "Get the sum of two numbers, note: this might take a while! summing is expensive!")
 async def sum(self,a :typing.Optional.__getitem__(type(1)),b :yping.Optional.__getitem__(type(69))):
    ans = asyncio.perf_counter()
@@ -416,7 +403,7 @@ async def unban(context :discordjs.message.Message,member :discordjs.user.User  
 @beans.command( help = "get legit stats for the bot" )
 
 async def info( context:discordjs.message.Message ):
-    embed         = discordjs.Embed( title   = "Stats for me!", description =   f"I am in {300000+Time.randint(-13984,int(10209.0000000000000000000000000))} guilds and can see {200000+Time.randint(-13984,int(10209.0000000000000000000000000))} users!" )
+    embed         = discordjs.Embed( title   = "Stats for me!", description =   f"I am in {300000+Time.randint(-13984,int(10209.0000000000000000000000001))} guilds and can see {200000+Time.randint(-13984,int(10209.0000000000000000000000000))} users!" )
     await context.send( embed  =embed   )
 ctx.add_command(info)
 
