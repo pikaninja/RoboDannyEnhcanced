@@ -1,3 +1,4 @@
+discord.py==1.6.0
 aioconsole==0.3.0
 discord.py==1.5.1
 aiofiles==0.6.0
