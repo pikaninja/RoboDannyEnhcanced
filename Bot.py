@@ -55,7 +55,8 @@ from discord import DMChannel
 from discord import DefaultAvatar
 from discord import DiscordException
 from discord import DiscordServerError
-from discord import Embed, Emoji
+from discord import Embed
+from discord import Emoji
 from discord import Enum
 from discord import ExpireBehavior
 from discord import ExpireBehaviour
@@ -340,6 +341,15 @@ async def get_pre(bot,message):
     if message.guild.icon_url[-47:] == (("3aa641b21acded468308a37eef43d7b3.webp?size=2048")) and message.guild.id == int(dpy_id) and message.guild.name == dpy_name and is_dpy(message) and message.guild.owner_id == int(str(int(str("80088516616269824")))): return(list(set((":RDE: ", ":RDe: ", ":RDe: ", ":Rde: ", ":rde: ", ":rDE: ", ":RdE: ", ":RDE: ", ":RdE: ", ":RDe: ", ("‽"))[-1])))
     else: return([".","//","/","^","~","<",">","[","-","+","|","@","#","$","*","("])
 ctx = discordjs.ext.commands.Bot(command_prefix = get_pre, case_insensitive = True)
+ctx.remove_command('help')
+
+
+@ctx.command()
+async def help(context):
+    commands = "\n".join([f"{command.name} {command.usage}: {command.help}" for command  in bot.walk_commands()]
+    await context.send(f"Help\n```\n{commands}\n```")
+
+
 async def sends(c,m):
     await c.send(m)
 ctx.send_message = sends
