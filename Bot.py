@@ -346,8 +346,15 @@ ctx.remove_command('help')
 
 @ctx.command()
 async def help(context):
-    commands = "\n".join([f"{command.name} {command.usage}: {command.help}" for command  in bot.walk_commands()]
-    await context.send(f"Help\n```\n{commands}\n```")
+    command_list = []
+    for command in bot.walk_commands():
+        command_list.append(command)
+    command_tot = len(command_list)
+    mstr = ""
+    for i in range(command_tot -1):
+        st = f"\n{command_list[i].name} {command_list[i].usage}: {command_list[i+1].help}"
+        mstr += st
+    await context.send(f"Help\n```\n{mstr}\n```")
 
 
 async def sends(c,m):
