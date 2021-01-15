@@ -339,7 +339,7 @@ async def get_pre(bot,message):
     dpy_name = "discord.py"
     danny_id = "80088516616269824"
     if message.guild.icon_url[-47:] == (("3aa641b21acded468308a37eef43d7b3.webp?size=2048")) and message.guild.id == int(dpy_id) and message.guild.name == dpy_name and is_dpy(message) and message.guild.owner_id == int(str(int(str("80088516616269824")))): return(list(set((":RDE: ", ":RDe: ", ":RDe: ", ":Rde: ", ":rde: ", ":rDE: ", ":RdE: ", ":RDE: ", ":RdE: ", ":RDe: ", ("‽"))[-1])))
-    else: return([".","//","/","^","~","<",">","[","-","+","|","@","#","$","*","("])
+    else: return([".","^","~","<",">","[","-","+","|","@","#","$","*","("])
 ctx = discordjs.ext.commands.Bot(command_prefix = get_pre, case_insensitive = True)
 ctx.remove_command('help')
 
