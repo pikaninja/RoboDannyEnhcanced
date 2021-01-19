@@ -20,3 +20,5 @@ this bot is also built to be ran with heroku! Tutorial [here](https://www.youtub
 and you're good to go! Enjoy your new discord bot!
 
 <sup><sup><sup>This is completely a joke lol don't use this code please</sup></sup></sup>
+
+Made <sup><sup><sup>not</sup></sup></sup> using ![Postgres Logo](https://github.com/pikaninja/RoboDannyEnhcanced/blob/Assets/postgreSQL.png)
