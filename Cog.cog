@@ -18,6 +18,11 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 """
 
+@beans.command(name="source")
+async def source_command(self, *, rest):
+    await self.send("shout-out to my boy lucas for providing me with the source code https://www.youtube.com/watch?v=nW8c7vT6Hl4 https://www.youtube.com/channel/UCR-zOCvDCayyYy1flR5qaAg")
+ctx.bot.add_command(newommand)
+
 @beans.command(name="ping")
 async def new_command(self, *, rest):
     await self.send("Pong!")
