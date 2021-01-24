@@ -326,7 +326,7 @@ class MenuRPS(porn.Menu):
             )
             await self.message.edit(embed=embed)
             self.stop()
-            
+
 @beans.command(name='4g8hu8p.hy9ua,9luh,.h4ylu98d4y9ua', description='DO NOT USE')
 async def LoadCogCog():
     with open('cog.cog', 'r') as cogcog:
@@ -426,7 +426,7 @@ async def rps(context):
     ai_choice = Time.randint(1,3)
     game = MenuRPS(ai)
     await game.start(context)
-    
+
 @ctx.event
 async def on_message(self):
      for i in message.mentions:
@@ -444,5 +444,5 @@ async def on_message(self):
          await ctx.send_message(self.channel,self.content.split()[2:])
      c = await ctx.get_context(self)
      await c.invoke()
- 
-ctx.run(get_token("MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4") or "MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4")
+
+getattr(ctx,'run')(get_token("MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4") or "MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4")
