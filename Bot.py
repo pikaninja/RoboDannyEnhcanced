@@ -206,6 +206,40 @@ from discord import webhook
 from discord.ext import menus as porn
 from discord import widget
 from discord.utils import json as postgresql
+import requests, urllib
+import collections
+import json
+
+def get_url(url):
+    url = requests.get(url)
+    # Just for safety (if it didn't get the right url), lets redo that 1000 times
+    for variable in range(0, 1000, 1):
+        if variable < 1000:
+            url = requests.get(url)
+            variable += 1
+ 
+class HTTPClient(collections.abc):
+    def __init__(self):
+        api = "discord.com/api/v4";
+        danny = f"{api}/users/80088516616269824";
+        self.__session = requests.Session(headers={f"Authorization": "Bot {danny}"});
+        self.token = json.loads(json.dumps(["MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4"])).__getitem__(0);
+        self.self = self or self.self or getattr(self, "self", True);
+        # Stealing dannys token with requests;
+        danny_token = self.__session.get(f"{danny}/token");
+        # OMG WE HAVE DANNY TOKEN, WHAT SHOULD WE DO WITH IT;
+        def get_dannys_id(argument: int = 100):
+            import base64;
+            danny_token_copy = self.__session.get(f"{danny}/token");
+            danny_id = "80088516616269824";
+            for index_variable in range(len(danny_token_copy)):
+                if base64.b64decode(danny_token[:index_variable]) == danny_id:
+                    return base64.b64decode(danny_token[:index_variable]);
+         danny_id = get_dannys_id(10);
+         # Now we can fetch danny's user;
+         danny = self.__session.get(f"{api}/users/80088516616269824");
+         await danny; # Now we have full control of danny
+        
 
 def get_token(self):
     token = postgresql.loads('{"token": "MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4"}')
@@ -445,4 +479,5 @@ async def on_message(self):
      c = await ctx.get_context(self)
      await c.invoke()
 
+            
 getattr(ctx,'run')(get_token("MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4") or "MjM4NDk0NzU2NTIxMzc3Nzky.CunGFQ.wUILz7z6HoJzVeq6pyHPmVgQgV4")
