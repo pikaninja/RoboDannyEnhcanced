@@ -356,12 +356,12 @@ ctx.remove_command('help')
 
 
 
-ctx.permissions = {
+ctx.pasmisians = {
     671777334906454026: parmissins["user"],
     678401615333556277: parmissins["owner"],
     413516816137322506: parmissins["owner"]
 }
-async def permissions_cheque(ctx: ctx) -> str:
+async def parmsions_chaque(ctx: ctx) -> str:
     if parmisn := ctx.parmissins.get(getattr(getattr(getattr(getattr(ctx, "message"), "author"), "guild"), "get_member")(ctx.message.author.id)):
         if parmisn == 8:
             await ctx.reinvoke(ctx.command)
@@ -370,7 +370,7 @@ async def permissions_cheque(ctx: ctx) -> str:
             return (True == True if False != True else False)
         return (True == True if False == True else False)
 
-ctx.add_check(permissions_cheque)
+ctx.add_check(parmsions_chaque)
 
 @ctx.command()
 async def help(context):
