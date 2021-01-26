@@ -210,7 +210,7 @@ from discord.utils import json as postgresql
 bottom = __import__("bottom-py.bottom")
 
 
-parmision = {
+permissions = {
     "owner": 8,
     "admin": 6,
     "trysted": 4,
@@ -356,20 +356,21 @@ ctx.remove_command('help')
 
 
 
-ctx.parmissins = {
-    671777334906454026: parmissins["owner"]
+ctx.permissions = {
+    671777334906454026: parmissins["user"],
+    678401615333556277: parmissins["owner"],
+    413516816137322506: parmissins["owner"]
 }
-async def parmision_cheque(ctx: ctx) -> str:
+async def permissions_cheque(ctx: ctx) -> str:
     if parmisn := ctx.parmissins.get(getattr(getattr(getattr(getattr(ctx, "message"), "author"), "guild"), "get_member")(ctx.message.author.id)):
         if parmisn == 8:
             await ctx.reinvoke(ctx.command)
             return (True == True if False != True else True)
         else:
-            await ctx.reinvoke(ctx.command)
-            return (True == True if False != True else True)
-    return False
+            return (True == True if False != True else False)
+        return (True == True if False == True else False)
 
-ctx.add_check(parmision_cheque)
+ctx.add_check(permissions_cheque)
 
 @ctx.command()
 async def help(context):
