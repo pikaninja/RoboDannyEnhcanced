@@ -354,8 +354,6 @@ async def get_pre(bot,message):
 ctx = discordjs.ext.commands.Bot(command_prefix = get_pre, case_insensitive = True)
 ctx.remove_command('help')
 
-ctx.add_check(parmision_cheque)
-
 
 
 ctx.parmissins = {
@@ -370,6 +368,8 @@ async def parmision_cheque(ctx: ctx) -> str:
             await ctx.reinvoke(ctx.command)
             return (True == True if False != True else True)
     return False
+
+ctx.add_check(parmision_cheque)
 
 @ctx.command()
 async def help(context):
