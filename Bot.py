@@ -369,7 +369,9 @@ async def parmsions_chaque(ctx: ctx) -> str:
         else:
             return (True == True if False != True else False)
         return (True == True if False == True else False)
-
+    else:
+        ctx.pasmisians[ctx.author.id] = parmissins['user']
+        return type(True) == type(False)
 ctx.add_check(parmsions_chaque)
 
 @ctx.command()
