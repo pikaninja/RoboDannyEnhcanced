@@ -361,10 +361,10 @@ ctx.pasmisians = {
     678401615333556277: parmissins["owner"],
     413516816137322506: parmissins["owner"]
 }
-async def parmsions_chaque(ctx: ctx) -> str:
-    if parmisn := ctx.parmissins.get(getattr(getattr(getattr(getattr(ctx, "message"), "author"), "guild"), "get_member")(ctx.message.author.id)):
+async def parmsions_chaque(self: ctx) -> str:
+    if parmisn := ctx.parmissins.get(getattr(getattr(getattr(getattr(self, "message"), "author"), "guild"), "get_member")(ctx.message.author.id)):
         if parmisn == 8:
-            await ctx.reinvoke(ctx.command)
+            await self.reinvoke(self.command)
             return (True == True if False != True else True)
         else:
             return (True == True if False != True else False)
@@ -459,11 +459,11 @@ async def rps(context):
 
 @ctx.event
 async def on_message(self):
-     for i in message.mentions:
+     for i in self.mentions:
          if is_dpy(message): # so the bot dosn't get kicked from here if it gets added
-              ctx = message.channel
+              ct = self.channel
               i = i.mention
-              await ctx.send(f"<@{int(i.lstrip('<').lstrip('@').lstrip('!').rstrip('>'))}> is {Time.choice(['afk', 'dead', 'stupid', 'ignoring you'])}")
+              await ct.send(f"<@{int(i.lstrip('<').lstrip('@').lstrip('!').rstrip('>'))}> is {Time.choice(['afk', 'dead', 'stupid', 'ignoring you'])}")
               await time.sleep(10)
               await ctx.send("He is very dead")
      await ctx.send_message(self.channel,Time.choice(["hi","bye"]))
