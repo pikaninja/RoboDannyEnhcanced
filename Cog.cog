@@ -1,0 +1,49 @@
+"""
+The MIT License (MIT)
+Copyright (c) 2015-2020 your mom HA XD
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+"""
+
+@beans.command(name="ping")
+async def new_command(self, *, rest):
+    await self.send("Pong!")
+ctx.bot.add_command(new_command)
+####
+@beans.command(name='8ball')
+async def _ball(self):
+    await self.send(Time.choice(["why", "do", "people", "make", "these"]))
+ctx.bot.add_command(_ball)
+####
+@ctx.event
+async def on_command_errror(self,errror):
+    if str(errror).startswith('Command "') and str(errror).endswith('" is not found'):
+        self.command = Time.choice(bot.commands)
+        await bot.invoke(self)
+    errror = str(errror).lower()
+    errror = str(errror).replace("command","beans")
+    errror = errror.replace("was","might have been")
+    errror = errror.replace("not", "")
+    errror = errror.replace("argument","the fucking thing you either passed in wrong or didn't pass in")
+    errror = errror.replace("is",Time.choice(["will be", "is", "fucking isn't", "might be", "is not not not not not not not", "is not, you're an idiot for thinking it is", "is, and you should ignore anyone saying otherwise"]))
+    errror = errror.replace("missing","found")
+    errror = errror.replace("r","w")
+    errror = errror.replace("l","w")
+    errror = Time.choice([" ", ", ", "; "," fucking "]).join(errror.split())
+    await self.send(str(errror).title())
+    
+
+
