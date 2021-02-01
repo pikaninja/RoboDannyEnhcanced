@@ -383,7 +383,7 @@ async def reactionrolesset(self, message: discord.Message, reaction, role: disco
     """
     with open(ctx.reactionroles.txt, "w+") as f:
         f.write(code)
-@ctx.event()
+@ctx.event
 async def on_raw_reaction_add(context):
     payload = context
     with open(ctx.reactionroles.txt, "r") as f:
