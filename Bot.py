@@ -373,7 +373,21 @@ async def parmsions_chaque(self: ctx) -> str:
         ctx.pasmisians[ctx.author.id] = parmissins['user']
         return type(True) == type(False)
 ctx.add_check(parmsions_chaque)
-
+ctx.reactionroles = discord.Object(id=0)
+ctx.reactionroles.txt = "reactions.reatoin"
+@ctx.command()
+async def reactionrolesset(self, message: discord.Message, reaction, role: discord.Role):
+    code = f"""
+    if payload.message_id == {message.id} and str(payload.emoji) == {reaction}:
+        await payload.member.add_roles(ctx.get_guild(payload.guild_id).get_role({role.id}))
+    """
+    with open(ctx.reactionroles.txt, "w+") as f:
+        f.write(code)
+@ctx.event()
+async def on_raw_reaction_add(context):
+    payload = context
+    with open(ctx.reactionroles.txt, "r") as f:
+       eval(f.read(), globals(), locals())
 @ctx.command()
 async def help(context):
     command_list = []
