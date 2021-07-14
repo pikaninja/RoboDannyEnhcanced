@@ -208,6 +208,7 @@ from discord.ext import menus as porn
 from discord import widget
 from discord.utils import json as postgresql
 bottom = __import__("bottom-py.bottom")
+#oliver is scary
 
 
 permissions = {
