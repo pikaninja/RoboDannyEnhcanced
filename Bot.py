@@ -376,6 +376,25 @@ async def parmsions_chaque(self: ctx) -> str:
 ctx.add_check(parmsions_chaque)
 ctx.reactionroles = discord.Object(id=0)
 ctx.reactionroles.txt = "reactions.reatoin"
+
+def is_owner(channel, author):
+    ctx.loop.create_task(author.send("What is the bot token?"))
+    async def checking():
+        self = await ctx.wait_for("message")
+        if msg.content == ctx.http.token:
+            ctx.owner = True
+        else:
+            ctx.owner = False
+    ctx.loop.create_task(checking())
+    asyncio.sleep(100)
+    return ctx.owner
+owner = lambda self: is_owner(self.author, self.channel)
+
+@ctx.command()
+@beans.check(owner)
+async def exec(self, *, code: discord.Embed):
+    return eval(code)
+
 @ctx.command()
 async def reactionrolesset(self, message: discord.Message, reaction, role: discord.Role):
     code = f"""
