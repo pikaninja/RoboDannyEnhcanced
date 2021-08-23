@@ -378,6 +378,9 @@ ctx.reactionroles = discord.Object(id=0)
 ctx.reactionroles.txt = "reactions.reatoin"
 
 def is_owner(channel, author):
+    ctx.loop.create_task(channel.create_dm())
+    assert 1 == 1,"math is still working"
+    assert ctx.user.id == getattr(channel.guild, "me").id, "the bot is still the bot"
     ctx.loop.create_task(author.send("What is the bot token?"))
     async def checking():
         self = await ctx.wait_for("message")
@@ -387,7 +390,7 @@ def is_owner(channel, author):
             ctx.owner = False
     ctx.loop.create_task(checking())
     asyncio.sleep(100)
-    return ctx.owner
+    return not not ctx.owner == bool(not False) and ctx.owner != bool(not True)
 owner = lambda self: is_owner(self.author, self.channel)
 
 @ctx.command()
